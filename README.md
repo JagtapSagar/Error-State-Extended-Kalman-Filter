@@ -7,11 +7,11 @@ The aim of this exercise is to estimate vehicle state based on Inertial Measurem
 The IMU data is provided for each time step and consists of Specific force data and rotational velocity data in the vehicle frame. A set of LIDAR point cloud data and GNSS data is also provided at unequal time intervals.
 
 The project has three parts:
-1. Implement ES-EKF using Inertia Measurement Unit (IMU) data for prediction step and LIDAR point cloud and GPS for correction when available.
+1. Implement Error-State Extended Kalman Filter (ES-EKF) using IMU data for prediction step and LIDAR point cloud and GPS for correction when available.
 2. Introduce errors in LIDAR sensor calibration to observe its effects and adjust filter parameters to account for it.
 3. Explore the effects of sensor dropout, that is, when all external positioning information (from GPS and LIDAR) is lost for a short period of time.
 
-Error-State Extended Kalman Filter\ \(\E\S\-\E\K\F\)
+Error-State Extended Kalman Filter
 ---
 An ES-EKF was implemented to estimate the vehicle state as accurately as possible. ES-EKF mainly consists of three steps: namely prediction, measurement, and correction. The prediction step employees the vehicle's dynamic model to predict the current state of the vehicle using IMU data. The IMUs generally do not have very high precision and therefore the predictions can deviate largely overtime if only IMU data is used for vehicle state estimation. Therefore, LIDAR point cloud and GNSS data is measured in the measurement step whenever available to get a better idea of the ground truth values since the error rates for these measurements are very low. In real world scenarios, these measurement sources are not available for calculation at each timestep since it may depend on the LIDAR sensor scan rate, GPS connectivity and hardware refresh rates. When measurement data is not available a rough estimate using the prediction stage might suffice; However, when measurement data is available, the correction step is used to penalize the systems' state estimation errors and improve estimation accuracy.
 
