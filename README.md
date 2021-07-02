@@ -31,7 +31,7 @@ The illustration below shows the above pseudocode in a workflow diagram.
 
 NOTE:
 * The ES-EKF is implemented in es_ekf.py and uses rotations.py for Quaternion calculations.
-* The equations used in this project can be found in the EKF and ES-EKF lecture slides in this repository.
+* The equations used in this project can be found in the ES-EKF lecture slides in this repository.
 * For information on Quaternion transformations refer the Quaternion kinematics for the error-state KF pdf in this repository.
 * The CARLA Simulator data used for calculations is contained in .pkl file in the data folder.
 * This project was a part of course evaluation for the [State Estimation and Localization for Self-Driving Cars course by University of Toronto](https://www.coursera.org/learn/state-estimation-localization-self-driving-cars?specialization=self-driving-cars).
