@@ -1,10 +1,10 @@
 Vehicle State Estimation on a Roadway
 ===
 
-[Error-State Extended Kalman Filter](#Error-State-Extended-Kalman-Filter)/[How to run the code](#How-to-run-the-code)/[Results](#Results)
+[Error-State Extended Kalman Filter](#Error-State-Extended-Kalman-Filter)//[How to run the code](#How-to-run-the-code)//[Results](#Results)
 
-The aim of this exercise is to estimate vehicle state based on Inertial Measurement Unit (IMU), LIDAR point cloud data and Global Navigation Satellite System (GNSS) data.
-The IMU data is provided for each time step and consists of Specific force data and rotational velocity data in the vehicle frame. A set of LIDAR point cloud data and GNSS data is also provided at unequal time intervals.
+The aim of this exercise is to estimate vehicle state based on Inertial Measurement Unit (IMU), LIDAR point cloud data and GPS Global Navigation Satellite System (GNSS) data.
+The IMU data is provided for each time step and consists of Specific force data and rotational velocity data in the vehicle frame. The set of LIDAR point cloud data and GPS data may not be available at every time step. 
 
 The project has three parts:
 1. Implement Error-State Extended Kalman Filter (ES-EKF) using IMU data for prediction step and LIDAR point cloud and GPS for correction when available.
@@ -26,7 +26,7 @@ The implementation of ES-EKF algorithm in the update loop is as follows.
 
 The illustration below shows the above pseudocode in a workflow diagram.
 
-<img src='https://github.com/JagtapSagar/Self-Driving-Cars-Specialization/blob/main/State%20Estimation%20and%20Localization%20for%20Self-Driving%20Cars/Course2FinalProject/Images/ES_EKF.jpg'>
+<img src='https://github.com/JagtapSagar/Error-State-Extended-Kalman-Filter/blob/main/Images/ES_EKF.jpg'>
  
 
 NOTE:
@@ -53,17 +53,17 @@ Results
 Part 1 Results : ES-EKF using Inertia Measurement Unit (IMU) data for prediction step and LIDAR point cloud and GPS for correction.
 Vehicle state estimates | State estimation error plot
 :-------------------------:|:-------------------------:
-<img src='https://github.com/JagtapSagar/Self-Driving-Cars-Specialization/blob/main/State%20Estimation%20and%20Localization%20for%20Self-Driving%20Cars/Course2FinalProject/Images/Part_1.png'> | <img src='https://github.com/JagtapSagar/Self-Driving-Cars-Specialization/blob/main/State%20Estimation%20and%20Localization%20for%20Self-Driving%20Cars/Course2FinalProject/Images/Part_1_error_plots.png'>
+<img src='https://github.com/JagtapSagar/Error-State-Extended-Kalman-Filter/blob/main/Images/Part_1.png'> | <img src='https://github.com/JagtapSagar/Error-State-Extended-Kalman-Filter/blob/main/Images/Part_1_error_plots.png'>
 
 Part 2 Results : With adjusted filter parameters to account for calibration errors introduced in LIDAR sensor.
 Vehicle state estimates | State estimation error plot
 :-------------------------:|:-------------------------:
-<img src='https://github.com/JagtapSagar/Self-Driving-Cars-Specialization/blob/main/State%20Estimation%20and%20Localization%20for%20Self-Driving%20Cars/Course2FinalProject/Images/Part_2.png'> | <img src='https://github.com/JagtapSagar/Self-Driving-Cars-Specialization/blob/main/State%20Estimation%20and%20Localization%20for%20Self-Driving%20Cars/Course2FinalProject/Images/Part_2_error_plots.png'>
+<img src='https://github.com/JagtapSagar/Error-State-Extended-Kalman-Filter/blob/main/Images/Part_2.png'> | <img src='https://github.com/JagtapSagar/Error-State-Extended-Kalman-Filter/blob/main/Images/Part_2_error_plots.png'>
 
 Part 3 Results : Effects of sensor dropout, that is, when all external positioning information (from GPS and LIDAR) is lost for a short period of time.
 Vehicle state estimates | State estimation error plot
 :-------------------------:|:-------------------------:
-<img src='https://github.com/JagtapSagar/Self-Driving-Cars-Specialization/blob/main/State%20Estimation%20and%20Localization%20for%20Self-Driving%20Cars/Course2FinalProject/Images/Part_3.png'> | <img src='https://github.com/JagtapSagar/Self-Driving-Cars-Specialization/blob/main/State%20Estimation%20and%20Localization%20for%20Self-Driving%20Cars/Course2FinalProject/Images/Part_3_error_plots.png'>
+<img src='https://github.com/JagtapSagar/Error-State-Extended-Kalman-Filter/blob/main/Images/Part_3.png'> | <img src='https://github.com/JagtapSagar/Error-State-Extended-Kalman-Filter/blob/main/Images/Part_3_error_plots.png'>
 
 
 
